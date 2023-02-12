@@ -1,0 +1,6 @@
+{
+    "files.autoSave": "off",
+    "dart.flutterGenerateLocalizationsOnSave": "never",
+    "dart.flutterHotReloadOnSave": "all",
+    "dart.hotReloadOnSave": "all"
+}
