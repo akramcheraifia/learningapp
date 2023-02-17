@@ -28,6 +28,7 @@ Widget defaultTextformfield({
   required TextEditingController Controller,
   required String label,
   required final void Function(String?) onSubmit,
+  final void Function()? suffixPressed,
   required final void Function(String?) onChange,
   required TextInputType type,
   required final String? Function(String?) validator,
@@ -39,13 +40,19 @@ Widget defaultTextformfield({
     validator: validator,
     controller: Controller,
     keyboardType: type,
+    obscureText: isPassword,
     onFieldSubmitted: onSubmit,
     onChanged: onChange,
     decoration: InputDecoration(
       labelText: label,
       border: const OutlineInputBorder(),
       prefixIcon: Icon(prefix),
-      suffixIcon: suffix != null ? Icon(suffix) : null,
+      suffixIcon: suffix != null
+          ? IconButton(
+              icon: Icon(suffix),
+              onPressed: suffixPressed,
+            )
+          : null,
     ),
   );
 }
